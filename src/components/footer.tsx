@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./logo";
+import { SocialLinks } from "./social-links";
 
 const columns = [
   {
@@ -38,8 +39,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#6b7c6e]">
-              One API key. Every AI model. Access LLMs, image, video, and audio models through a unified platform.
+              One API key. Every AI model. Access LLMs, image, video, and audio models through a
+              unified platform.
             </p>
+            <SocialLinks className="mt-5" />
           </div>
           {columns.map((col) => (
             <div key={col.title}>
@@ -61,7 +64,10 @@ export function Footer() {
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-[#1a2a1c] pt-8 sm:flex-row">
           <p className="text-xs text-[#6b7c6e]">© 2026 Open Vibe. All rights reserved.</p>
-          <p className="text-xs text-[#6b7c6e]">Built for developers who ship.</p>
+          <div className="flex items-center gap-4">
+            <SocialLinks />
+            <p className="hidden text-xs text-[#6b7c6e] sm:block">Built for developers who ship.</p>
+          </div>
         </div>
       </div>
     </footer>

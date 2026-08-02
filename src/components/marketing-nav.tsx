@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./logo";
 import { Button } from "./ui/button";
+import { SocialLinks } from "./social-links";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -32,7 +33,9 @@ export function MarketingNav() {
             </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <SocialLinks />
+          <div className="mx-1 h-5 w-px bg-[#1a2a1c]" />
           <Link href="/login">
             <Button variant="ghost" size="sm">
               Log in
@@ -42,13 +45,16 @@ export function MarketingNav() {
             <Button size="sm">Get started</Button>
           </Link>
         </div>
-        <button
-          className="rounded-lg p-2 text-muted hover:bg-white/5 md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <SocialLinks />
+          <button
+            className="rounded-lg p-2 text-[#6b7c6e] hover:bg-white/5 hover:text-foreground"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
       <div
         className={cn(
